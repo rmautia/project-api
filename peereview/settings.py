@@ -38,7 +38,9 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    
+    'rest_framework',
+    'bootstrap4',
+    'rate.apps.RateConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -89,13 +91,13 @@ if config('MODE')=="dev":
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': config('DB_NAME', 'postgres'),
-            'USER': config('DB_USER', 'postgres'),
-            'PASSWORD':config('DB_PASSWORD', 'postgres'),
+            'NAME': config('DB_NAME),
+            'USER': config('DB_USER'),
+            'PASSWORD':config('DB_PASSWORD'),
             'HOST': config('DB_HOST', 'localhost'),
             'PORT': config('DB_PORT', '5432'),
             'TEST': {
-                'NAME': 'test_pgram'
+                'NAME': 'test_peereview'
             }
         },
     }
