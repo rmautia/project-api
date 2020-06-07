@@ -1,0 +1,59 @@
+{%extends 'base.html'%}
+{%load bootstrap4%}
+{%block content%}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7">
+      <div class="">
+        <div id="card" class="card">
+          <div class="card-header bg-maroon">
+            <div class="row">
+             <div class="profile-image">
+              <img src="{{project.profile.profile_pic.url}}" class="imgz" style='width: 10%;'>
+            </div>
+             <h3 style='' class="text-white">{{project.main_user}}</h3>
+           </div>
+         </div>
+          <div class="card-body">
+            <div class="">
+              <img class="img-fluid" src="{{project.image_path.url}}" width="100%">
+            </div>
+
+          </div>
+          <div class="card-footer text-center" >
+            <div class="">
+              <i class="fas fa-comment" data-toggle="modal" data-target="#exampleModalScrollable"></i>
+              <a href='{% url "rate" project.id %}'> <i class="fas fa-star"></i> </a>
+            </div>
+            <div>
+              <p>posted {{project.upload_date|timesince}} ago</p>
+            </div>
+          </div>
+
+
+        </div>
+
+           </div>
+    </div>
+
+    <div class="col-md-5">
+      <div style="background-color: rgba(255, 255, 255, 0.9); padding: 5%;">
+        <div class="body text-center">
+          {% if message %}
+            <p> {{message}} </p>
+          {% endif %}
+          <h3>Ratings must be between 1 and 10</h3>
+          <form class="form-group" action="/rate/{{project.id}}/" name="{{project.id}}"  method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            {%bootstrap_form form%}
+           <button class="btn bg-maroon"  type="submit" name="button">Post Ratings</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{%endblock%}

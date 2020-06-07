@@ -1,0 +1,213 @@
+{%extends 'base.html'%}
+{%load bootstrap4%}
+{%block content%}
+
+<div class="container-fluid">
+		<!--Carousel Wrapper-->
+  <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+      <!--Indicators-->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-2" data-slide-to="1"></li>
+        <li data-target="#carousel-example-2" data-slide-to="2"></li>
+      </ol>
+      <!--/.Indicators-->
+      <!--Slides-->
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <div class="view">
+            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
+              alt="First slide">
+            <div class="mask rgba-black-strong"></div>
+          </div>
+          <div class="carousel-caption">
+            <h1 class="page-title">
+              All Rating Attributes
+            </h1>
+
+            <div class="circles">
+              <div class="first circle">
+                <strong></strong>
+                <p>8/10</p>
+                <span>DESIGN</span>
+              </div>
+
+              <div class="second circle">
+                <strong></strong>
+                <p>8/10</p>
+                <span>USABILITY</span>
+              </div>
+
+              <div class="third circle">
+                <strong></strong>
+                <p>9/10</p>
+                <span>CONTENT</span>
+              </div>
+
+              <div class="fourth circle">
+                <strong></strong>
+                <p>{{top.overall}}/10</p>
+                <span>OVERALL</span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="carousel-item">
+          <!--Mask color-->
+          <div class="view">
+            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
+              alt="Second slide">
+            <div class="mask rgba-black-strong"></div>
+          </div>
+          <div class="carousel-caption">
+              <h1 class="page-title">
+                  All Rating Attributes
+              </h1>
+
+
+              <div class="circles">
+                <div class="first circle">
+                  <strong></strong>
+                  <p>{{top.design}}/10</p>
+                  <span>DESIGN</span>
+                </div>
+
+                <div class="second circle">
+                  <strong></strong>
+                  <p>{{top.usability}}/10</p>
+                  <span>USABILITY</span>
+                </div>
+
+                <div class="third circle">
+                  <strong></strong>
+                  <p>{{top.content}}/10</p>
+                  <span>CONTENT</span>
+                </div>
+
+                <div class="fourth circle">
+                  <strong></strong>
+                  <p>{{top.overall}}/10</p>
+                  <span>OVERALL</span>
+                </div>
+
+              </div>
+
+            </div>
+        </div>
+        <div class="carousel-item">
+          <!--Mask color-->
+          <div class="view">
+            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
+              alt="Third slide">
+            <div class="mask rgba-black-strong"></div>
+          </div>
+          <div class="carousel-caption">
+            <h1 class="page-title">
+                All Rating Attributes
+            </h1>
+
+            <div class="circles">
+              <div class="first circle">
+                <strong></strong>
+                <p>{{top.design}}/10</p>
+                <span>DESIGN</span>
+              </div>
+
+              <div class="second circle">
+                <strong></strong>
+                <p>{{top.usability}}/10</p>
+                <span>USABILITY</span>
+              </div>
+
+              <div class="third circle">
+                <strong></strong>
+                <p>{{top.content}}/10</p>
+                <span>CONTENT</span>
+              </div>
+
+              <div class="fourth circle">
+                <strong></strong>
+                <p>{{top.overall}}/10</p>
+                <span>OVERALL</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/.Slides-->
+      <!--Controls-->
+	</div>
+</div>
+
+<div class="container-fluid con">
+	<div class="row">
+		{% if projects %}
+		{% for project in projects %}
+		<div class="col-md-4 col-sm-6 col-xs-6" style='margin-top: 2%'>
+			<div class="card text-center">
+				<div class="card-header bg-nav">
+					<div class="row">
+						<div class="profile-image">
+						 <img src="{{project.profile.profile_pic.url}}" class="imgz">
+					 </div>
+						<h2 class="text-white name" style=''>{{project.main_user}}</h2>
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="main-image">
+						<img class="img-fluid" src="{{project.image_path.url}}" width="100%">
+					</div>
+
+
+				</div>
+				<div class="card-footer text-muted">
+					<div>
+						<h5 class="card-title"> <span><strong>Name: </strong></span>{{project.name}}</h5>
+						<hr>
+						<p class="card-text"><span><strong>Description: </strong></span>{{project.description}}</p>
+						<hr>
+						<a href="{{project.link}}"> <button type="button" class="btn bg-maroon">Tour Project</button> </a>
+						<hr>
+						<p>posted {{project.upload_date|timesince}} ago</p>
+					</div>
+				</div>
+			<a href="{% url 'review' project.id %}"> <i class="fas fa-comment"></i> </a>
+			</div>
+		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="margin-top: 200px">
+			<div class="modal-dialog modal-dialog-scrollable" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalScrollableTitle">{{user}}</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<img src="{{project.image_path.url}}" class="image-fluid" data-toggle="modal" data-target="#exampleModalScrollable">
+					</div>
+					<div class="modal-footer">
+						<h4>{{project.description}}</h4>
+						<h5 class="gallery-item-likes"><span class="visually-hidden">Ratings:</span><i class="fas fa-heart" aria-hidden="true"></i> {{project.rating}}</h5>
+						<h5 class="gallery-item-comments"><span class="visually-hidden">Reviews:</span><i class="fas fa-comment" aria-hidden="true"></i> {{project.reviews|length}}</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{% endfor %}
+
+	</div>
+	{% else %}
+	<div class="alert">
+		<h2 class="alert alert-info animated fadeIn"> No projects uploaded yet</h2>
+	</div>
+	{% endif %}
+</div>
+
+{%endblock%}

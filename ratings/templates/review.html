@@ -1,0 +1,139 @@
+{%extends 'base.html'%}
+{%load bootstrap4%}
+{%block content%}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7">
+      <div class="">
+             <div id="card" class="card">
+               <div class="card-header bg-maroon">
+                 <div class="row">
+         					<div class="profile-image">
+         					 <img src="{{project.profile.profile_pic.url}}" class="imgz" style='width: 10%;'>
+         				 </div>
+         					<h2  class="text-white">{{project.main_user}}</h2>
+         				</div>
+         			</div>
+               <div class="card-body">
+                 <div class="">
+                   <img class="img-fluid" src="{{project.image_path.url}}" width="100%">
+                 </div>
+
+               </div>
+               <div class="card-footer text-center" >
+                 <div class="">
+                   <i class="fas fa-comment" data-toggle="modal" data-target="#exampleModalScrollable"></i>
+                   <a href='{% url "rate" project.id %}'> <i class="fas fa-star"></i> </a>
+                 </div>
+                 <div>
+                   <p>posted {{project.upload_date|timesince}} ago</p>
+                 </div>
+               </div>
+
+
+             </div>
+
+           </div>
+
+    </div>
+
+    <div class="col-md-5">
+      <div id="card" class="card">
+        <div class="card-header bg-maroon">
+          <h1 style="margin: 3%; text-align: center;color:white;">Ratings</h1>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3">
+              <h4 class="text-center">Username</h4>
+            </div>
+            <div class="col-md-2">
+              <h4>Usable</h4>
+              <hr>
+            </div>
+            <div class="col-md-2">
+              <h4>Content</h4>
+              <hr>
+            </div>
+            <div class="col-md-2">
+              <h4>Design</h4>
+              <hr>
+            </div>
+            <div class="col-md-3">
+              <h4>Mean ratings</h4>
+              <hr>
+            </div>
+          </div>
+          {% if ratings %}
+          {% for rating in ratings %}
+          <div class="row">
+            <div class="col-md-4">
+              <h4 class="text-center">{{rating.main_user}}</h4>
+            </div>
+            <div class="col-md-2">
+              <h4 class="text-center">{{rating.usability}}</h4>
+            </div>
+            <div class="col-md-2">
+              <h4 class="text-center">{{rating.content}}</h4>
+            </div>
+            <div class="col-md-2">
+              <h4 class="text-center">{{rating.design}}</h4>
+            </div>
+            <div class="col-md-2">
+              <h4 class="text-center">{{rating.average}}</h4>
+            </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+        </div>
+        <div class="card-footer">
+          <h3 class="text-center">Total Average Rating: {{project.rating}}</h3>
+        </div>
+      <hr>
+
+      <div id="logi" class="text-center">
+        <div id="card" class="card">
+          <div class="card-header bg-maroon">
+            <h1 style="margin: 3%; color:white;">Reviews</h1>
+          </div>
+          <div class="card-body">
+               {%if reviews%}
+               {%for review in reviews%}
+               <span><h4 id="span"><strong>{{review.main_user}}...</strong> {{review.review}}</h4></span><br>
+               <p>posted {{review.upload_date|timesince}} ago</p>
+               {%endfor%}
+               {%else%}
+                <div class="alert">
+                  <p class="alert alert-info animated fadeIn">Post has No reviews yet</p>
+                </div>
+               {%endif%}
+                 <br>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="margin-top: 200px">
+          <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content text-center">
+              <div class="modal-header bg-nav" style='border-radius: 0%'>
+                <h1 class="modal-title text-white text-center" id="exampleModalScrollableTitle" >{{user}}</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form class="form-group" action="/review/{{project.id}}/" name="{{project.id}}"  method="post" enctype="multipart/form-data">
+                  {%csrf_token%}
+                  {%bootstrap_form form%}
+                 <button class="btn btns bg-maroon text-white"  type="submit" name="button">Post Review</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+{%endblock%}
