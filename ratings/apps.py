@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class RateConfig(AppConfig):
+class RatingsConfig(AppConfig):
     name = 'rate'
