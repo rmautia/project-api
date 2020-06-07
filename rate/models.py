@@ -59,8 +59,8 @@ class Project(models.Model):
     design = models.CharField(max_length = 30, default = 0)
     rating = models.CharField(max_length = 30, default = 0)
 
-    def __str__(self):
-        return self.caption
+    # def __str__(self):
+    #     return self.caption
 
     def save_project(self):
         self.save()
