@@ -1,5 +1,5 @@
-release: python3 manage.py makemigrations ratings
+release: python3 manage.py makemigrations rate
 release: python3 manage.py migrate
 
 
-web: gunicorn pgram.wsgi --log-file -
+web: gunicorn rate.wsgi --log-file -

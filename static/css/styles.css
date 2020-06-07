@@ -403,7 +403,7 @@ a{
 
 /* These are just a test styles - you don't need them in your project */
 
-/* a {
+a {
   color: orange;
 }
 
@@ -684,4 +684,4 @@ li{
     font-family: 'Merienda', sans-serif;
     font-size: small;
   }
-} */
+}
