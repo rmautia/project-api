@@ -5,7 +5,7 @@
   </head>
   <body>
     <div class="container-fluid">
-      <nav class="navbar bg-nav jumbo" style='background-color: rgb(16, 177, 16);'>
+      <nav class="navbar bg-nav jumbo" style='background-color: rgba(85, 77, 199, 0.075);'>
         <a class="navbar-brand text-white" href="{% url 'home' %}" style='font-size: xx-large'><h1>Rating</h1></a>
         {% if user.is_authenticated %}
           <a data-toggle="dropdown" class="lite text-white">{{user}}</a>
@@ -31,7 +31,7 @@
 
         {% endif %}
         <form  action="{% url 'search' %}" role="search" class="form-inline  my-2 my-lg-0">
-          <input id="searchUp" class="form-control" name="project" type="text" placeholder="Search for a Project" aria-label="Search">
+          <input id="searchUp" class="form-control" name="project" type="text" placeholder="Enter project keyword" aria-label="Search">
         </form>
       </nav>
     </div>

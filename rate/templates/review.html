@@ -5,8 +5,8 @@
   <div class="row">
     <div class="col-md-7">
       <div class="">
-             <div id="card" class="card">
-               <div class="card-header bg-maroon">
+             <div id="card" class="card" style="background-color: lightseagreen;">
+               <div class="card-header bg-success">
                  <div class="row">
          					<div class="profile-image">
          					 <img src="{{project.profile.profile_pic.url}}" class="imgz" style='width: 10%;'>
@@ -38,8 +38,8 @@
     </div>
 
     <div class="col-md-5">
-      <div id="card" class="card" style="background: ;">
-        <div class="card-header bg-maroon">
+      <div id="card" class="card" style="background-color: lightseagreen;">
+        <div class="card-header bg-success">
           <h1 style="margin: 3%; text-align: center;color:white;">Ratings</h1>
         </div>
         <div class="card-body">
@@ -92,9 +92,9 @@
       <hr>
 
       <div id="logi" class="text-center">
-        <div id="card" class="card">
+        <div id="card" class="card" style="background-color: lightseagreen;">
           <div class="card-header bg-maroon">
-            <h1 style="margin: 3%; color:white;">Reviews</h1>
+            <h1 style="margin: 3%; color:rgb(28, 179, 66);">Reviews</h1>
           </div>
           <div class="card-body">
                {%if reviews%}
@@ -127,7 +127,7 @@
                 <form class="form-group" action="/review/{{project.id}}/" name="{{project.id}}"  method="post" enctype="multipart/form-data">
                   {%csrf_token%}
                   {%bootstrap_form form%}
-                 <button class="btn btns bg-maroon text-white"  type="submit" name="button">Post Review</button>
+                 <button class="btn btns bg-success text-white"  type="submit" name="button">Post Review</button>
                 </form>
               </div>
             </div>
