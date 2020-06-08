@@ -41,26 +41,26 @@
       <div id="card" class="card" style="background-color: lightseagreen;">
         <div class="card-header bg-success">
           <h1 style="margin: 3%; text-align: center;color:rgb(204, 248, 10);">Ratings</h1>
-        </div>
+        </div>2, 102, 122)
         <div class="card-body">
           <div class="row">
             <div class="col-md-3">
               <h4 class="text-center">Username</h4>
             </div>
             <div class="col-md-2">
-              <h4>Usable</h4>
+              <h4>Navigation</h4>
               <hr>
             </div>
             <div class="col-md-2">
-              <h4>Content</h4>
+              <h4>Information</h4>
               <hr>
             </div>
             <div class="col-md-2">
-              <h4>Design</h4>
+              <h4>Display</h4>
               <hr>
             </div>
             <div class="col-md-3">
-              <h4>Mean ratings</h4>
+              <h4>Average ratings</h4>
               <hr>
             </div>
           </div>
@@ -123,11 +123,11 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
+              <div class="modal-body" style="background-color:rgb(12, 167, 12);">
                 <form class="form-group" action="/review/{{project.id}}/" name="{{project.id}}"  method="post" enctype="multipart/form-data">
                   {%csrf_token%}
                   {%bootstrap_form form%}
-                 <button class="btn btns bg-success text-white"  type="submit" name="button">Post Review</button>
+                 <button class="btn btns bg-primary text-white"  type="submit" name="button">Post Review</button>
                 </form>
               </div>
             </div>
