@@ -6,12 +6,12 @@
     <div class="col-md-7">
       <div class="">
         <div id="card" class="card">
-          <div class="card-header bg-maroon">
+          <div class="card-header bg-success">
             <div class="row">
              <div class="profile-image">
               <img src="{{project.profile.profile_pic.url}}" class="imgz" style='width: 10%;'>
             </div>
-             <h3 style='' class="text-white">{{project.main_user}}</h3>
+             <h3 class="text-white">{{project.main_user}}</h3>
            </div>
          </div>
           <div class="card-body">
@@ -23,7 +23,7 @@
           <div class="card-footer text-center" >
             <div class="">
               <i class="fas fa-comment" data-toggle="modal" data-target="#exampleModalScrollable"></i>
-              <a href='{% url "rate" project.id %}'> <i class="fas fa-star"></i> </a>
+              <a href='{% url "rate" project.id %}'> <i class="far fa-smile-beam"></i> </a>
             </div>
             <div>
               <p>posted {{project.upload_date|timesince}} ago</p>
