@@ -11,7 +11,7 @@
   {% if title %}
   <title>{{title}}</title>
   {% else %}
-    <title> rateAproject </title>
+    <title> Projrate </title>
   {% endif %}
 
   {% block styles %}
@@ -25,19 +25,19 @@
 </head>
 <body>
     {% block content %}
-    <div class="container-fluid">
-      <nav class="navbar bg-nav jumbo" style='padding-left: 20%; padding-right: 20%'>
-        <a class="navbar-brand text-white" href="" style='font-size: xx-large'><h1>Rate a Project</h1></a>
+    <div class="container-fluid" >
+      <nav class="navbar bg-nav jumbo" style="background-color: rgba(36, 15, 15, 0.219);">
+        <a class="navbar-brand text-white" href="" style='font-size: xx-large'><h1>Welcome To Projrate</h1></a>
         {% if user.is_authenticated %}
           <ul>
-          <li class="dropdown">
-            <span class="lite"><a data-toggle="dropdown" class="text-white">User: <span class="current_user">{{user}}</span></a></span>
+          <li class="dropdown" style="padding: 5px;">
+            <span class="lite"><a data-toggle="dropdown" class="text-white"><span class="current_user">{{user}}</span></a></span>
             <ul style="padding-right: 20%; padding-left: 20%;" class="dropdown-menu" role="menu" >
               <li>
                 <a href="/accounts/password/change" style="font-size: large; margin-bottom: 1%;" class="btn">Change Password</a>
               </li>
               <li>
-                <a href="/logout" style="font-size: large;" class="btn">Logout</a>
+                <a href="/logout" style="font-size: large;" class="btn">Logout<i class="fas fa-sign-out-alt"></i></a>
               </li>
             </ul>
           </li>
@@ -56,16 +56,16 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
           <div class="card text-center">
-      			<div class="card-header bg-maroon" style="padding: 5%;">
+      			<div class="card-header bg-success" style="padding: 5%;">
               <h2 class="card-title text-white" style="font-size: xx-large">Create Profile</h2>
             </div>
-      			<div class="card-body">
+      			<div class="card-body" style="background: url(https://cdn6.f-cdn.com/contestentries/1490804/32875450/5cbfe247369ee_thumbCard.jpg);">
               <form class="form-group" action="{%url 'index'%}" method="post" enctype="multipart/form-data">
 
                 {%csrf_token%}
                 {%bootstrap_form form%}
 
-                <button class="btn bg-maroon" type="submit" name="button">Create</button>
+                <button class="btn bg-success" type="submit" name="button">Submit</button>
 
               </form>
             </div>
