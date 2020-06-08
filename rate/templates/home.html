@@ -4,7 +4,7 @@
 
 <div class="container-fluid">
 		<!--Carousel Wrapper-->
-  <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+  <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel" style="padding: 100px,50px;">
       <!--Indicators-->
       <ol class="carousel-indicators">
         <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
@@ -16,7 +16,7 @@
       <div class="carousel-inner" role="listbox">
         <div class="carousel-item active">
           <div class="view">
-            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
+            <img class="d-block w-100" src="https://media.nature.com/lw800/magazine-assets/d41586-018-06171-0/d41586-018-06171-0_16084870.jpg"
               alt="First slide">
             <div class="mask rgba-black-strong"></div>
           </div>
@@ -57,7 +57,7 @@
         <div class="carousel-item">
           <!--Mask color-->
           <div class="view">
-            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
+            <img class="d-block w-100" src="https://imgproxy.natucate.com/tIeaexuBES34a1Dr1kd7j2-N5AmX8BTOVjLGhJXatpo/rs:fill/g:ce/w:3000/h:1688/aHR0cHM6Ly93d3cubmF0dWNhdGUuY29tL21lZGlhL3BhZ2VzL3JlaXNlbi85Nzk5ZjA1OC0yNDI4LTQ1YzAtOGM1OS0wOTVmM2YzOTZjZDYvNzYxMjU2NDk4LTE1NTc5MjA2ODEvZnJlaXdpbGxpZ2VuYXJiZWl0LW5ldXNlZWxhbmQtbmF0dXJzY2h1dHotb3plYW5pZW4tc2VlLWJlcmdlLXNhYmJhdGphaHItbmF0dWNhdGUuanBn"
               alt="Second slide">
             <div class="mask rgba-black-strong"></div>
           </div>
@@ -99,7 +99,7 @@
         <div class="carousel-item">
           <!--Mask color-->
           <div class="view">
-            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
+            <img class="d-block w-100" src="https://wardynskiphoto.com/wp-content/uploads/2019/05/Nature-Mike-Wardynski-New-Zealand-photography-workshop-fine-art-prints-NZ-Milford-sound-south-island-queenstown-christchurch-Gate-of-the-Forest-.jpg"
               alt="Third slide">
             <div class="mask rgba-black-strong"></div>
           </div>
@@ -163,13 +163,13 @@
 
 
 				</div>
-				<div class="card-footer text-muted">
+				<div class="card-footer text-muted" style="background:lightblue;">
 					<div>
 						<h5 class="card-title"> <span><strong>Name: </strong></span>{{project.name}}</h5>
 						<hr>
 						<p class="card-text"><span><strong>Description: </strong></span>{{project.description}}</p>
 						<hr>
-						<a href="{{project.link}}"> <button type="button" class="btn bg-maroon">Tour Project</button> </a>
+						<a href="{{project.link}}"> <button type="button" class="btn bg-success">View project here</button> </a>
 						<hr>
 						<p>posted {{project.upload_date|timesince}} ago</p>
 					</div>
@@ -205,7 +205,7 @@
 	</div>
 	{% else %}
 	<div class="alert">
-		<h2 class="alert alert-info animated fadeIn"> No projects uploaded yet</h2>
+		<h2 class="alert alert-info animated fadeIn"> There are no projects yet</h2>
 	</div>
 	{% endif %}
 </div>

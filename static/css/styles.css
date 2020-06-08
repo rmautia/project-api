@@ -550,11 +550,11 @@ li{
 }
 
 .bg-nav{
-  background-color: #29264E;
+  background-color: rgb(18, 180, 40);
 }
 
 .lite{
-  background-color: #336699;
+  background-color: #12b127;
   padding: 5%;
   border-radius: 3%;
   width: 100%;
@@ -626,7 +626,7 @@ li{
     text-align: center;
   }
   body{
-    background-color: #000;
+    background-color: rgb(65, 161, 149);
   }
 }
 

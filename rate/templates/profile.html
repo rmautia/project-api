@@ -45,7 +45,7 @@
 
 						<h1 class="profile-user-name">{{user}}</h1>
 
-						<button class="btn btns bg-maroon profile-edit-btn" data-toggle="modal" data-target="#exampleModal">Add Project</button>
+						<button class="btn btns bg-green profile-edit-btn" data-toggle="modal" data-target="#exampleModal">Add Project</button>
 
 						<a class="profile-settings-btn" aria-label="profile settings" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-cog" aria-hidden="true" ></i></a>
 
@@ -141,7 +141,7 @@
 								<form class="form-group" action="{%url 'profile'%}" method="post" enctype="multipart/form-data">
 									{%csrf_token%}
 									{%bootstrap_form form%}
-									<button class="btn btns bg-maroon" type="submit" name="button">Save changes</button>
+									<button class="btn btns bg-green" type="submit" name="button">Save changes</button>
 								</form>
 							</div>
 							<div class="modal-footer">
