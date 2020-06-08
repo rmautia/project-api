@@ -9,7 +9,7 @@
         <a class="navbar-brand text-red" href="{% url 'home' %}"><img  src="/static/images/rlogos.jpg" class="" style="width:30px"><h1>Rate Here</h1></a>
         {% if user.is_authenticated %}
           <a data-toggle="dropdown" class="lite text-white">{{user}}</a>
-          <ul>
+          <ul style="background: coral;">
           <li class="dropdown">
             <ul style="padding-right: 30%; padding-left: 30%;" class="dropdown-menu" role="menu" >
               <li>
