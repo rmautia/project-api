@@ -23,7 +23,7 @@
   		{% for project in projects %}
 
   		<div class="card text-center">
-  			<div class="card-header bg-maroon">
+  			<div class="card-header bg-success">
   				<div class="row">
   					<div class="profile-image">
   					 <img src="{{project.profile.profile_pic.url}}" class="imgz" style='width: 10%;'>
@@ -79,7 +79,7 @@
   	</div>
   	{% else %}
   	<div class="alert">
-  		<h2 class="alert alert-info animated fadeIn"> No projects uploaded yet</h2>
+  		<h2 class="alert alert-info animated fadeIn">There is no project by that name, Try again with the correct format</h2>
   	</div>
   	{% endif %}
   </div>
