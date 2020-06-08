@@ -45,7 +45,7 @@
 
 						<h1 class="profile-user-name">{{user}}</h1>
 
-						<button class="btn btns bg-green profile-edit-btn" data-toggle="modal" data-target="#exampleModal">Add Project</button>
+						<button class="btn btns bg-success profile-edit-btn" data-toggle="modal" data-target="#exampleModal">Post Project</button>
 
 						<a class="profile-settings-btn" aria-label="profile settings" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-cog" aria-hidden="true" ></i></a>
 
@@ -132,7 +132,7 @@
 					<div class="modal-dialog" role="document">
 						<div class="modal-content text-center">
 							<div class="modal-header bg-nav" style='border-radius: 0%'>
-								<h1 class="modal-title text-white text-center" id="exampleModalLabel">Add Project</h1>
+								<h1 class="modal-title text-white text-center" id="exampleModalLabel">Post Project</h1>
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
@@ -145,7 +145,7 @@
 								</form>
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btns bg-maroon" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btns bg-success" data-dismiss="modal">Close</button>
 							</div>
 						</div>
 					</div>
@@ -161,10 +161,10 @@
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
-							<div class="modal-body text-center" style="display:flex; flex-direction:column; padding: 5%;">
-										<a href="/accounts/password/change" style="font-size: large; large; margin-bottom: 1%;" class="btn btns btn-info">Change Password</a>
+							<div class="modal-body text-center" style="display:flex; flex-direction:column; padding: 20%; background: aqua;">
+										<a href="/accounts/password/change" style="font-size: large; margin-bottom: 5%;" class="btn btns btn-primary">Change Password</a>
 
-										<a href="/logout" style="font-size: large;" class="btn btns btn-info">Logout</a>
+										<a href="/logout" style="font-size: large;" class="btn btns btn-warning">Logout</a>
 
 							</div>
 							<div class="modal-footer">
