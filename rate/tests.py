@@ -4,8 +4,8 @@ import datetime as dt
 # Create your tests here.
 class ProfileTestClass(TestCase):
     def setUp(self):
-        self.user = User(id = 5, username = 'photolee', password = 'Qwerty123', email = 'photolee@gmail.com')
-        self.profile = Profile(id = 5, profile_pic = 'fuaad.png', main_user = self.user, bio = 'photo fo passports')
+        self.user = User(id = 5, username = 'pete', password = 'mytestcase', email = 'bookiedonate@gmail.com')
+        self.profile = Profile(id = 5, profile_pic = 'pete.png', main_user = self.user, bio = 'photo fo passports')
 
     def tearDown(self):
         User.objects.all().delete()
@@ -31,15 +31,15 @@ class ProfileTestClass(TestCase):
     def test_search_users(self):
         self.user.save()
         self.profile.save_profile()
-        profile = Profile.search_users('photolee')
+        profile = Profile.search_users('pete')
         self.assertEqual(len(profile), 1)
 
 class ProjectTestClass(TestCase):
 
     def setUp(self):
-        self.user = User(id = 5, username = 'photolee', password = 'Qwerty123', email = 'photolee@gmail.com')
-        self.profile = Profile(id = 5, profile_pic = 'fuaad.png', main_user = self.user, bio = 'photo fo passports')
-        self.project = Project(id = 5, image_path = 'fuaad.png', name = 'fuaad', main_user = self.user, description = 'photo fo passports', reviews = 0, usability = 0, upload_date=dt.datetime.today(), content = 0, design = 0, profile = self.profile)
+        self.user = User(id = 5, username = 'pete', password = 'mytestcase', email = 'bookiedonate@gmail.com')
+        self.profile = Profile(id = 5, profile_pic = 'pete.png', main_user = self.user, bio = 'photo fo passports')
+        self.project = Project(id = 5, image_path = 'pete.png', name = 'pete', main_user = self.user, description = 'photo fo passports', reviews = 0, usability = 0, upload_date=dt.datetime.today(), content = 0, design = 0, profile = self.profile)
 
     def tearDown(self):
         User.objects.all().delete()
@@ -77,5 +77,5 @@ class ProjectTestClass(TestCase):
     def test_update_project(self):
         self.user.save()
         self.profile.save_profile()
-        Project.update_project(self.project.id, 'fuaad.png')
-        self.assertEqual(self.project.image_path, 'fuaad.png')
+        Project.update_project(self.project.id, 'pete.png')
+        self.assertEqual(self.project.image_path, 'pete.png')
